@@ -1,14 +1,41 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar style="background-color: #488aff; color: white;">
     <ion-title>
-      Ionic Blank
+      WEATHER APP
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  
+
+  
+  <form (submit)="onButton(number.value)">
+  <ion-item>
+    <ion-label floating>Enter PIN</ion-label>
+    <ion-input type="number" #number></ion-input>
+  </ion-item>
+  <ion-item>
+<button ion-button  style="width:99%;"><ion-icon name="search" item-left></ion-icon>SHOW WEATHER</button>
+</ion-item>
+</form>
+
+
+<ion-card *ngIf="showHi">
+  <ion-card-header style="background-color: #488aff;color:white;">
+    <strong>{{city}}</strong>
+  </ion-card-header>
+  <ion-item>
+  	{{temperature}} degrees (F)
+  </ion-item>
+  <ion-item>
+  	<strong>Humidity</strong>: {{humidity}}%
+  </ion-item>
+  <ion-item>
+  	<strong>Visibility</strong>: {{visibility}}
+  </ion-item>
+  <ion-item>
+  	<strong>Wind</strong>: {{wind}} mph
+  </ion-item>
+ </ion-card>
 </ion-content>
